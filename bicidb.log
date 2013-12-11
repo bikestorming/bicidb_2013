@@ -1,0 +1,46 @@
+Express server listening on port 3000
+Express server listening on port 3000
+[90mGET /bikestormers [32m200 [90m14ms - 0b[0m
+Express server listening on port 3000
+[90mGET /bikestormers [32m200 [90m14ms - 144b[0m
+[90mGET /bikestormers [32m200 [90m4ms - 232b[0m
+[90mGET /bikestormers [32m200 [90m6ms - 284b[0m
+Express server listening on port 3000
+[90mGET /bikestormers [32m200 [90m13ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m6ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m4ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m1ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m2ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m2ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m1ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m2ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m2ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m2ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m1ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m2ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m2ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m2ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m4ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m1ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m2ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m1ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m3ms - 284b[0m
+Express server listening on port 3000
+Express server listening on port 3000
+[90mGET /bikestormers [32m200 [90m13ms - 284b[0m
+Express server listening on port 3000
+[90mGET /locations [32m200 [90m1151ms - 173b[0m
+[90mGET /locations?lt=40.7&lg=-74 [32m200 [90m1320ms - 33.92kb[0m
+Express server listening on port 3000
+[90mGET /locations?lt=40.7&lg=-74 [32m200 [90m794ms - 28.74kb[0m
+[90mGET /locations [32m200 [90m1081ms[0m
+[90mGET /location [33m404 [90m2ms[0m
+[90mGET /locations [32m200 [90m877ms[0m
+[90mGET /locations?lt=40.7&lg=-74 [32m200 [90m1138ms - 28.74kb[0m
+[90mGET /locations [32m200 [90m1536ms[0m
+[90mGET /locations?lt=40.7&lg=-74 [32m200 [90m1124ms - 29.04kb[0m
+[90mGET /users [33m404 [90m2ms[0m
+[90mGET /users/ [33m404 [90m1ms[0m
+[90mGET /bikestormers [32m200 [90m13ms - 284b[0m
+[90mGET /bikestormers [32m200 [90m4ms - 284b[0m
+[90mGET /bikechecks [33m404 [90m1ms[0m

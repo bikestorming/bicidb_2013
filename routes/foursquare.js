@@ -6,14 +6,14 @@ var user;
 var foursquare = {
   'clientId' : 'DRFJXSS5URHG3GDTXTUX0HYON3AS3YF3Y0A0N0VFQQR3Z5DR',
   'clientSecret' : 'Q1DWNQCZOOJ0ZE4I24OLHAW05RTQKICPFEDQYZQYU4YGFZH5',
-  'redirectUrl' : 'http://mobile.bikestorming.com:3000/foursquare'
+  'redirectUrl' : 'http://192.168.1.118:3000/foursquare'
 };
 
 
 exports.login =  function(req, res) {
   var code = req.query.code;
   if (code) {
-    superagent.get('https://foursquare.com/oauth2/access_token?client_id='+ foursquare.clientId + '&client_secret=' + foursquare.clientSecret + '&grant_type=authorization_code&redirect_uri=http://mobile.bikestorming.com:8000&code=' + code).end(function(req) {
+    superagent.get('https://foursquare.com/oauth2/access_token?client_id='+ foursquare.clientId + '&client_secret=' + foursquare.clientSecret + '&grant_type=authorization_code&redirect_uri=http://192.168.1.118:8000&code=' + code).end(function(req) {
       var oauth_token = req.body.access_token;
       
       users.user.findOne({
@@ -25,11 +25,11 @@ exports.login =  function(req, res) {
             }); 
             new_user.save(function(err, user_created) {
               user = user_created;
-              res.redirect("http://mobile.bikestorming.com:8000/?user_id=" + user._id);
+              res.redirect("http://192.168.1.118:8000/?user_id=" + user._id);
             });
           } else {
             user = model;
-            res.redirect("http://mobile.bikestorming.com:8000/?user_id=" + user._id);
+            res.redirect("http://192.168.1.118:8000/?user_id=" + user._id);
           } 
         });
 
