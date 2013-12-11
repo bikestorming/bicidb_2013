@@ -58,9 +58,11 @@ app.post('/users/:id/bikecheck', foursquare.bikecheck);
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
-
+var mongo_uri = process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+      'mongodb://localhost/mydb';
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/bicidb');
+mongoose.connect(mongo_uri);
 var db = mongoose.connection;
 
 http.createServer(app).listen(app.get('port'), function(){
