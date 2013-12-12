@@ -29,7 +29,7 @@ app.use(express.methodOverride());
 app.use(express.cookieParser('bikecheck'));
 app.use(express.session());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images/', express.static(path.join(__dirname, 'images')));
 
 var controllers = require('./controllers');
 // Routes - Controllers
