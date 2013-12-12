@@ -4,6 +4,9 @@ var bikecheck = new mongoose.Schema({
   description: {
     value: String
   },
+  user: {
+    email: String
+  },
   location: {
     name: String,
     latitude: String,
