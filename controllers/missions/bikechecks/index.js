@@ -19,8 +19,8 @@ exports.save = function(req, res) {
         }
       }); 
      easyimage.resize({
-       src: image_path,
-       dst: thumbnail_path,
+       src: "./images/" + image_path,
+       dst: "./images/" + thumbnail_path,
        width: 100,
        height: 100
      }, function(image) {
