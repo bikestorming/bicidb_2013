@@ -23,7 +23,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.logger('dev'));
-app.use(express.bodyParser({ keepExtensions: true, uploadDir: '/Users/tehsis/workspace/bicidb/uploads', limit: 1024*1024*1024 }));
+app.use(express.bodyParser({ keepExtensions: true, limit: 1024*1024*1024 }));
 app.use(express.methodOverride());
 
 app.use(express.cookieParser('bikecheck'));
