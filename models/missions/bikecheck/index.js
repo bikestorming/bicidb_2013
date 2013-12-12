@@ -8,6 +8,9 @@ var bikecheck = new mongoose.Schema({
     name: String,
     latitude: String,
     longitude: String
+  },
+  image: {
+    url: String
   }
 });
 

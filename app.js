@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -8,6 +7,8 @@ var missions = require('./routes/missions');
 var http = require('http');
 var path = require('path');
 var app = express();
+
+var base64 = require('base64-image');
 
 var endpoints = require('./endpoints');
 
@@ -22,8 +23,9 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.logger('dev'));
-app.use(express.bodyParser());
+app.use(express.bodyParser({ keepExtensions: true, uploadDir: '/Users/tehsis/workspace/bicidb/uploads', limit: 1024*1024*1024 }));
 app.use(express.methodOverride());
+
 app.use(express.cookieParser('bikecheck'));
 app.use(express.session());
 app.use(app.router);
@@ -36,6 +38,7 @@ app.get(endpoints.locations.all, controllers.locations.get);
 app.get(endpoints.locations.test, controllers.locations.test);
 
 app.post(endpoints.missions.bikecheck, controllers.bikechecks.save);
+app.post(endpoints.missions.bikecheck, base64(path.join(__dirname, './uploads')));
 app.get(endpoints.missions.bikecheck, controllers.bikechecks.get);
 //app.post(endpoints.bikestormers.all, controllers.bikestormers.post);
 
