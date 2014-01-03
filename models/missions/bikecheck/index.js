@@ -26,7 +26,6 @@ var bikecheck = new mongoose.Schema({
     provider: String,
     id: {
       type: String,
-      unique: true
     }
   },
   created_at: String

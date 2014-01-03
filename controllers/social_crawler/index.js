@@ -36,7 +36,6 @@ var updateBikechecks = function(callback) {
         created_at: bkchk.created_time
       };
       new_bikechecks.push(new_bikecheck);
-
     }
 
     bikecheckModel.create(new_bikechecks, function() {
