@@ -5,7 +5,13 @@ var bikecheck = new mongoose.Schema({
     value: String
   },
   user: {
-    email: String
+    email: String,
+    social: {
+      instagram: {
+        id: String,
+        username: String
+      }
+    }
   },
   location: {
     name: String,
@@ -15,7 +21,15 @@ var bikecheck = new mongoose.Schema({
   image: {
     original: String,
     thumbnail: String
-  }
+  },
+  source: {
+    provider: String,
+    id: {
+      type: String,
+      unique: true
+    }
+  },
+  created_at: String
 });
 
 module.exports = mongoose.model('bikecheck', bikecheck);

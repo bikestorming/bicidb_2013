@@ -12,6 +12,11 @@ var endpoints = {
   },
   missions: {
     bikecheck: '/missions/bikechecks'
+  },
+  social_crawler: {
+    force: {
+      bikecheck: '/social_crawler/force/bikecheck'
+    }
   }
 };
 

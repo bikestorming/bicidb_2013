@@ -4,6 +4,7 @@
 
 var express = require('express');
 var missions = require('./routes/missions');
+var social_crawler = require('./controllers/social_crawler');
 var http = require('http');
 var path = require('path');
 var app = express();
@@ -40,6 +41,7 @@ app.get(endpoints.locations.test, controllers.locations.test);
 app.post(endpoints.missions.bikecheck, controllers.bikechecks.save);
 app.post(endpoints.missions.bikecheck, base64(path.join(__dirname, './uploads')));
 app.get(endpoints.missions.bikecheck, controllers.bikechecks.get);
+app.get(endpoints.social_crawler.force.bikecheck, social_crawler.updateBikechecks);
 //app.post(endpoints.bikestormers.all, controllers.bikestormers.post);
 
 /* 
@@ -55,6 +57,11 @@ app.get('/near', foursquare.near);
 
 app.post('/users/:id/bikecheck', foursquare.bikecheck);
 */
+
+setTimeout(function() {
+  console.log('Updating bikechecks...');
+  social_crawler.updateBikechecks();
+}, 60000);
 
 
 // development only
