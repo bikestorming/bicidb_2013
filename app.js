@@ -63,7 +63,6 @@ setTimeout(function() {
   social_crawler.updateBikechecks();
 }, 60000);
 
-
 // development only
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
