@@ -1,8 +1,6 @@
 var bikecheks = require('./bikechecks.js');
 var bikecheckModel = require('../../models/missions/bikecheck');
 
-
-
 var updateBikechecks = function(callback) {
   var new_bikechecks = [];
   bikecheks.fromInstagram(function(raw_bikechecks) {
@@ -56,5 +54,6 @@ var forceupdate = function(req, res) {
 };
 
 module.exports = {
-  updateBikechecks: updateBikechecks
+  updateBikechecks: updateBikechecks,
+  forceupdate: forceupdate
 };
