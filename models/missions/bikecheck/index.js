@@ -24,8 +24,9 @@ var bikecheck = new mongoose.Schema({
   },
   instagram_id: {
     type: String,
-    unique: true,
-    dropDups: true
+    index: {
+      unique: true
+    }
   },
   created_at: String
 });
