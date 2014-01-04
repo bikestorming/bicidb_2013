@@ -9,6 +9,7 @@ var updateBikechecks = function(callback) {
     for(i=0;i<raw_bikechecks_length;i++) {
       var bkchk = raw_bikechecks[i];
       var new_bikecheck = {
+        source: "Instagram",
         image: {
           original: bkchk.images.standard_resolution.url,
           thumbnail: bkchk.images.thumbnail.url

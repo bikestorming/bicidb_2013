@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var bikecheck = new mongoose.Schema({
   _id: String,
+  source: String,
   description: {
     value: String
   },
