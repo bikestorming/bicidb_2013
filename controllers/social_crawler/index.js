@@ -29,7 +29,7 @@ var updateBikechecks = function(callback) {
             }
           }
         },
-        instagram_id: bkchk.id,
+        _id: bkchk.id,
         created_at: bkchk.created_time
       };
       new_bikechecks.push(new_bikecheck);
