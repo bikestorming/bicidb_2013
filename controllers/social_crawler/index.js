@@ -4,7 +4,9 @@ var bikecheckModel = require('../../models/missions/bikecheck');
 var updateBikechecks = function(callback) {
   bikecheks.fromInstagram(function(bikechecks) {
     bikecheckModel.create(bikechecks, function(err) {
-      callback(err, bikechecks);
+      if (callback) {
+        callback(err, bikechecks);
+      }
     });
   });
 };
