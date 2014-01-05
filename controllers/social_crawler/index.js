@@ -1,13 +1,8 @@
 var bikecheks = require('./bikechecks/instagram.js');
 var bikecheckModel = require('../../models/missions/bikecheck');
-var uuid = require('node-uuid');
 
 var updateBikechecks = function(callback) {
   bikecheks.fromInstagram(function(bikechecks) {
-    bikechecks.push({
-      _id: uuid.v1(),
-      name: "hola"
-    });
     bikecheckModel.create(bikechecks, function(err) {
       callback(err, bikechecks);
     });
