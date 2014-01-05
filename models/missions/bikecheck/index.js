@@ -9,6 +9,7 @@ var bikecheck = new mongoose.Schema({
     network: String,
     original: String,
   },
+  emoranking: String,
   user: {
     email: String,
     social: {

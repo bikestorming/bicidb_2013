@@ -4,7 +4,7 @@ function getRanking(desc) {
   //definimos los caracteres a matchear 
   var opinion = desc.match(regexp); 
   var ranking = -0; 
-  if (opinion !== undefined) { 
+  if (Array.isArray(opinion)) { 
     switch (opinion[0]) { 
       case ":D": 
         ranking = 1; 

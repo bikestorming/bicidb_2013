@@ -43,7 +43,9 @@ app.post(endpoints.missions.bikecheck, base64(path.join(__dirname, './uploads'))
 app.get(endpoints.missions.bikecheck, controllers.bikechecks.get);
 app.get(endpoints.social_crawler.force.bikecheck, social_crawler.forceupdate);
 
+setTimeout(function() {
   social_crawler.updateBikechecks();
+});
 
 // development only
 if ('development' === app.get('env')) {
