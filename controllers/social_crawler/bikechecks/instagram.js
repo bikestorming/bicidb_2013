@@ -1,6 +1,7 @@
 var instagram = require('../../../providers/instagram');
 var moment = require('moment');
 var bikecheckModel = require('../../../models/missions/bikecheck');
+var emoranking = require('../../../helpers/emoranking.js');
 
 var fromInstagram = function(callback) {
   instagram.searchTag('bkBikecheck', function(raw_bikechecks) {
@@ -11,6 +12,7 @@ var fromInstagram = function(callback) {
       var bkchk = raw_bikechecks[i];
       var new_bikecheck = {
         _id: bkchk.id,
+        emoranking: emoranking.get(bkchk.caption.text),
         image: {
           original: bkchk.images.standard_resolution.url,
           thumbnail: bkchk.images.thumbnail.url

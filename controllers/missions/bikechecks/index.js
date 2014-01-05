@@ -2,6 +2,7 @@ var bikecheck = require('../../../models/missions/bikecheck');
 var fs = require('fs');
 var uuid = require('node-uuid');
 var easyimage = require('easyimage');
+var emoranking = require('../../../helpers/emoranking.js');
 
 exports.save = function(req, res) {
 
@@ -15,6 +16,7 @@ exports.save = function(req, res) {
         _id: image_name,
         location: req.body.location,
         description: req.body.description,
+        emoranking: emoranking.get(req.body.description),
         image: {
           original: '/images/' + image_path,
           thumbnail: '/images/' + thumbnail_path
