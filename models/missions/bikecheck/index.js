@@ -2,9 +2,12 @@ var mongoose = require('mongoose');
 
 var bikecheck = new mongoose.Schema({
   _id: String,
-  source: String,
   description: {
     value: String
+  },
+  source: {
+    network: String,
+    original: String,
   },
   user: {
     email: String,
@@ -23,12 +26,6 @@ var bikecheck = new mongoose.Schema({
   image: {
     original: String,
     thumbnail: String
-  },
-  instagram_id: {
-    type: String,
-    index: {
-      unique: true
-    }
   },
   created_at: String
 });

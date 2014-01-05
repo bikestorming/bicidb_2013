@@ -12,6 +12,7 @@ exports.save = function(req, res) {
 
   fs.writeFile("./images/" + image_path,new Buffer(image, "base64"), function(err) {
       var new_bikecheck = new bikecheck({
+        _id: image_name,
         location: req.body.location,
         description: req.body.description,
         image: {

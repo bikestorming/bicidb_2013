@@ -33,30 +33,15 @@ app.use(app.router);
 app.use('/images/', express.static(path.join(__dirname, 'images')));
 
 var controllers = require('./controllers');
+
 // Routes - Controllers
 app.get(endpoints.bikestormers.all, controllers.bikestormers.get);
 app.get(endpoints.locations.all, controllers.locations.get);
 app.get(endpoints.locations.test, controllers.locations.test);
-
 app.post(endpoints.missions.bikecheck, controllers.bikechecks.save);
 app.post(endpoints.missions.bikecheck, base64(path.join(__dirname, './uploads')));
 app.get(endpoints.missions.bikecheck, controllers.bikechecks.get);
 app.get(endpoints.social_crawler.force.bikecheck, social_crawler.forceupdate);
-//app.post(endpoints.bikestormers.all, controllers.bikestormers.post);
-
-/* 
- * Deprecated
- *
-app.get('/', routes.index);
-app.get('/users/:id', user.find);
-app.get('/missions', missions.list);
-app.get('/missions/:id', missions.mission);
-app.get('/foursquare', foursquare.login);
-app.get('/users/:id/bikecheck', foursquare.checkins);
-app.get('/near', foursquare.near);
-
-app.post('/users/:id/bikecheck', foursquare.bikecheck);
-*/
 
 setTimeout(function() {
   console.log('Updating bikechecks...');

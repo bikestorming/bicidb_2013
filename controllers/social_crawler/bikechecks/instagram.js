@@ -1,5 +1,6 @@
 var instagram = require('../../../providers/instagram');
 var moment = require('moment');
+var bikecheckModel = require('../../../models/missions/bikecheck');
 
 var fromInstagram = function(callback) {
   instagram.searchTag('bkBikecheck', function(raw_bikechecks) {
@@ -9,7 +10,7 @@ var fromInstagram = function(callback) {
     for(i=0;i<raw_bikechecks_length;i++) {
       var bkchk = raw_bikechecks[i];
       var new_bikecheck = {
-        source: "Instagram",
+        _id: bkchk.id,
         image: {
           original: bkchk.images.standard_resolution.url,
           thumbnail: bkchk.images.thumbnail.url
@@ -30,7 +31,11 @@ var fromInstagram = function(callback) {
             }
           }
         },
-        _id: bkchk.id,
+        source:{
+          id: bkchk.id,
+          original: bkchk.link,
+          network: "Instagram"
+        },
         created_at: moment.unix(bkchk.created_time).toDate()
       };
       new_bikechecks.push(new_bikecheck);
